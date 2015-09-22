@@ -16,6 +16,7 @@ class GalleryItem extends DataObject {
 	 */
     private static $db = array(
         "Title" => "Varchar(255)",
+        "VideoURL" => "Varchar(255)",
         "Sort" => "Int"
     );
 
@@ -43,6 +44,15 @@ class GalleryItem extends DataObject {
             TextField::create('Title', 'Title')->setDescription("Title of the gallery item"),
             UploadField::create('Image', 'Image')->setFolderName("GalleryItems")
         );
+
+        if (Config::inst()->get('GalleryPage', 'VideoAllowed')) {
+            $fields->push(
+                TextField::create("VideoURL", "Video URL")
+                    ->setAttribute("placeholder", "http://")
+                    ->setDescription("You may use Youtube OR Vimeo URLs")
+            );
+        }
+
         return $fields;
     }
 
