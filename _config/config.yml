@@ -1,0 +1,10 @@
+---
+Name: plato-silverstripe-gallery
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+GalleryPage:
+  ItemLimit: 100
+  icon: 'plato-gallery/images/gallerypage.png'
+GalleryPage_Controller:

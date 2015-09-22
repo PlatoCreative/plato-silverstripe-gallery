@@ -1,0 +1,23 @@
+{
+  "name": "plato-creative/plato-silverstripe-gallery",
+  "description": "Plato's Gallery module for the base installer",
+  "type": "silverstripe-module",
+  "homepage": "https://github.com/PlatoCreative/plato-silverstripe-banners",
+  "keywords": ["silverstripe", "gallery", "images", "videos", "plato"],
+  "authors": [
+    {
+      "name": "Plato Creative",
+      "email": "web@platocreative.co.nz"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/PlatoCreative/plato-silverstripe-gallery/issues"
+  },
+  "require": {
+    "silverstripe/framework": "3.1.*",
+    "silverstripe/cms": "3.1.*"
+  },
+  "extra": {
+    "installer-name": "plato-gallery"
+  }
+}
