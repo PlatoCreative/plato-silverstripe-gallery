@@ -11,3 +11,8 @@ composer require plato-creative/plato-silverstripe-gallery dev-master
 ```
 
 ### Configuration
+There is currently one config option. You can limit the max amount of gallery items.
+```yaml
+GalleryPage:
+  ItemLimit: 99
+```
