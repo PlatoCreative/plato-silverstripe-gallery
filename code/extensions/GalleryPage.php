@@ -28,7 +28,7 @@ class GalleryPage extends Page
         $galleryConfig = new GridFieldConfig_RelationEditor();
         if(class_exists('GridFieldSortableRows')) $galleryConfig->addComponent(new GridFieldSortableRows('Sort'));
 
-        if ($this->owner->GalleryItems()->Count() == $this->owner->config()->ItemLimit) {
+        if ($this->owner->GalleryItems()->Count() >= $this->getItemLimit()) {
             $galleryConfig->removeComponentsByType('GridFieldAddNewButton');
         }
 
@@ -36,6 +36,14 @@ class GalleryPage extends Page
 		$fields->addFieldToTab('Root.Gallery', $galleryGrid);
 
         return $fields;
+    }
+
+    /**
+     * @return Int
+     * @config()
+     */
+    public function getItemLimit() {
+        return ($this->owner->config()->ItemLimit ? $this->owner->config()->ItemLimit : 100);
     }
 
 }

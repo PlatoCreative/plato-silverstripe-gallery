@@ -5,7 +5,4 @@ After:
   - 'cms/*'
 ---
 GalleryPage:
-  ItemLimit: 100
-  VideoAllowed: false
   icon: 'plato-gallery/images/gallerypage.png'
-GalleryPage_Controller:
