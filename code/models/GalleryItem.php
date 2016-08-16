@@ -4,16 +4,17 @@
 *
 * @package plato-silverstripe-gallery
 */
-class GalleryItem extends DataObject {
+class GalleryItem extends DataObject
+{
 
     /**
-	 * @var string
-	 */
+     * @var string
+     */
     private static $default_sort = "Sort";
 
     /**
-	 * @var array
-	 */
+     * @var array
+     */
     private static $db = array(
         "Title" => "Varchar(255)",
         "VideoURL" => "Varchar(255)",
@@ -21,16 +22,16 @@ class GalleryItem extends DataObject {
     );
 
     /**
-	 * @var array
-	 */
+     * @var array
+     */
     private static $has_one = array(
         "GalleryPage" => "GalleryPage",
         "Image" => "Image"
     );
 
     /**
-	 * @var array
-	 */
+     * @var array
+     */
     private static $summary_fields = array(
         "Title" => "Title",
         "Image.CMSThumbnail" => "Image"
@@ -39,7 +40,8 @@ class GalleryItem extends DataObject {
     /**
      * @return FieldList
      */
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         $fields = new FieldList(
             TextField::create('Title', 'Title')->setDescription("Title of the gallery item"),
             UploadField::create('Image', 'Image')->setFolderName("GalleryItems")
@@ -55,5 +57,4 @@ class GalleryItem extends DataObject {
 
         return $fields;
     }
-
 }
